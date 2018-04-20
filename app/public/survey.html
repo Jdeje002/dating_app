@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Express App</title>
+    <!-- complete bootstrap css -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- Nav bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">You and Me</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a id='survey' class="nav-link" href="#">Survey</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h3>About You</h3>
+        <hr>
+        <form>
+            <div class="form-group">
+                <label for="formGroupExampleInput">Name</label>
+                <input type="text" class="form-control" id="user" placeholder="Required">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Link to Photo Image</label>
+                <input type="text" class="form-control" id="photo" placeholder="Required">
+            </div>
+            <br>
+        </form>
+        <hr>
+        <br>
+    </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+
+                <!-- Survey questions -->
+                <div id='questions'>
+                    <h2>Question 1</h2>
+                    <h5>I want someone with the same hobbies as myself.</h5>
+                    <div class="form-group">
+                        <label for="exampleSelect1">Select an Option</label>
+                        <select class="form-control" id="q1">
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                    <br>
+                    <h2>Question 2</h2>
+                    <h5>Poeple say I am a likeable person.</h5>
+                    <div class="form-group">
+                        <label for="exampleSelect1">Select an Option</label>
+                        <select class="form-control" id="q2">
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                    <br>
+                    <h2>Question 3</h2>
+                    <h5>My idea of a fun time is going to clubs and dancing the night away.</h5>
+                    <div class="form-group">
+                        <label for="exampleSelect1">Select an Option</label>
+                        <select class="form-control" id="q3">
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                    <br>
+                    <h2>Question 4</h2>
+                    <h5>True love is right around the corner.</h5>
+                    <div class="form-group">
+                        <label for="exampleSelect1">Select an Option</label>
+                        <select class="form-control" id="q4">
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                    <br>
+                    <h2>Question 5</h2>
+                    <h5>The idea of a night without friends is horrible.</h5>
+                    <div class="form-group">
+                        <label for="exampleSelect1">Select an Option</label>
+                        <select class="form-control" id="q5">
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                    <br>
+                    <h2>Question 6</h2>
+                    <h5>I can escape my troubles with music,games, or a book.</h5>
+                    <div class="form-group">
+                        <label for="exampleSelect1">Select an Option</label>
+                        <select class="form-control" id="q6">
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                    <br>
+                    <h2>Question 7</h2>
+                    <h5>I need a person on the same level as me.( looks wise)</h5>
+                    <div class="form-group">
+                        <label for="exampleSelect1">Select an Option</label>
+                        <select class="form-control" id="q7">
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                    <br>
+                    <h2>Question 8</h2>
+                    <h5> Why must I do this if i can pay someone to do it for me.</h5>
+                    <div class="form-group">
+                        <label for="exampleSelect1">Select an Option</label>
+                        <select class="form-control" id="q8">
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                    <br>
+                    <h2>Question 9</h2>
+                    <h5>If you cheat one me you are dead.</h5>
+                    <div class="form-group">
+                        <label for="exampleSelect1">Select an Option</label>
+                        <select class="form-control" id="q9">
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                    <br>
+                    <h2>Question 10</h2>
+                    <h5>I like to be the more dominate one in the relationship.</h5>
+                    <div class="form-group">
+                        <label for="exampleSelect1">Select an Option</label>
+                        <select class="form-control" id="q10">
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                    <br>
+                    <br>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1">
+                        
+                    </div>
+                    <div class="col-md-10">
+                        <button id="submit"type="button" class="btn btn-success">submit</button>
+                        <br>
+                        <br>
+                    </div>
+
+                    <div class="col-md-1">
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+
+
+
+            <!-- jquery cdn -->
+            <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+            <!-- complete bootstrap js -->
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                crossorigin="anonymous"></script>
+
+            <script src="../js/app.js"></script>
+</body>
+
+</html>
