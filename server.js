@@ -1,20 +1,25 @@
-// npm packages
-var express = require('express')
-var bodyparser = require('body-parser')
-var path = require('path')
+var express = require("express");
+var bodyParser = require("body-parser");
+var path = require("path");
 
-// new express app
-var app = express()
+var app = express();
+var PORT = process.env.PORT || 3000;
 
-// middleware
-app.use(express.static(path.join(__dirname, 'public/views')))
-app.use(bodyparser.urlencoded({extended: true}))
-app.use(bodyparser.json())
+// create application/json parser
+var jsonParser = bodyParser.json();
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
-// your code here...
 
-var PORT = process.env.PORT || 3000
-// listening port
-app.listen(PORT, function (e) {
-  if (e) throw e
-})
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.text());
+app.use(bodyParser.json({type:'application/vnd.api+json'}));
+
+require("./app/routing/apiRoutes.js")(app);
+require("./app/routing/htmlRoutes.js")(app);
+
+app.listen(PORT, function() {
+  console.log("App listening on PORT: " + PORT);
+});
+
+/// https://stormy-lake-18818.herokuapp.com/ ///

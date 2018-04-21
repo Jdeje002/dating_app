@@ -199,7 +199,7 @@
                         
                     </div>
                     <div class="col-md-10">
-                        <button id="submit"type="button" class="btn btn-success">submit</button>
+                        <button id="submit"type="button" class="btn btn-success">Submit</button>
                         <br>
                         <br>
                     </div>
@@ -220,7 +220,58 @@
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
                 crossorigin="anonymous"></script>
 
-            <script src="../js/app.js"></script>
+            <script>
+            $("#submit").on("click", function (event) {
+                event.preventDefault();
+                console.log("click");
+                function validateForm() {
+                    var isValid = true;
+                    $(".form-control").each(function () {
+                        if ($(this).val() === "") {
+                            isValid = false;
+                        }
+                    });
+                    return isValid;
+                }
+                //If all required fields are filled
+                if (validateForm()) {
+                    var userData = {
+                        name: $("#user").val().trim(),
+                        photo: $("#photo").val().trim(),
+                        scores: [
+                            $("#q1").val(),
+                            $("#q2").val(),
+                            $("#q3").val(),
+                            $("#q4").val(),
+                            $("#q5").val(),
+                            $("#q6").val(),
+                            $("#q7").val(),
+                            $("#q8").val(),
+                            $("#q9").val(),
+                            $("#q10").val(),
+                        ]
+                    };
+                  
+                    $.post("/api/friends", userData, function (data) {
+                        //Grab result from the AJAX post so that the 
+                        if (data) {
+                            // console.log("#match-name= " + data.matchName);
+                            console.log("#match-photo= " + data.matchPhoto);
+                            $("#match-name").text(data.matchName);
+                            $("#match-name").append("!");
+                            $("#match-photo").attr("src", data.matchPhoto);
+                            // Show the module with the best match
+                            $("#results-modal").modal("toggle");
+                        } else {
+                            alert("something went wrong please fill out the survey again.")
+                        }
+                    })
+                } else {
+                    alert("Please fill out all fields before submitting!");
+                }
+                console.log(userData);
+            });
+            </script>
 </body>
 
 </html>

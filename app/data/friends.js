@@ -51,5 +51,5 @@ var friendsArray = [
         scores:[ 5,1,4,1,5,1,2,4,3,3]
       },
       
-]
-module.exports=friendsArray
+];
+module.exports = friendsArray;
